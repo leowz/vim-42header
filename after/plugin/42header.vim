@@ -142,7 +142,7 @@ function! s:hFileInsert()
 endfunction
 
 function! s:insert()
-	call s:hFileInsert();
+	call s:hFileInsert()
 
 	let l:line = 11
 	" empty line after header
