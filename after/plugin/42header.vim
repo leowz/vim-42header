@@ -10,7 +10,6 @@
 "                                                                              "
 " **************************************************************************** "
 
-" ty zaz <3
 let s:asciiart = [
 			\"        :::      ::::::::",
 			\"      :+:      :+:    :+:",
@@ -21,6 +20,8 @@ let s:asciiart = [
 			\"    ###   ########.fr    "
 			\]
 
+let g:hdr42user = 'zweng'
+let g:hdr42mail = 'zweng@student.42.fr'
 let s:start		= '/*'
 let s:end		= '*/'
 let s:fill		= '*'
