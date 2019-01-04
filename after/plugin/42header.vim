@@ -126,9 +126,25 @@ function! s:date()
 	return strftime("%Y/%m/%d %H:%M:%S")
 endfunction
 
-function! s:insert()
-	let l:line = 11
+function! s:hFileInsert()
+	" simple solution not good
+	let l:name = expand("%:r")
+	let l:extension = expand("%:e")
+	if l:extension ==? "h" || l:extension ==? "hpp"
+		let l:line1 = "#ifndef " . toupper(name) . '_' . toupper(extension)
+		let l:line2 = "# define " . toupper(name) . '_' . toupper(extension)
+		let l:linelast = "#endif"
+		call append(0, l:linelast)
+		call append(0, "")
+		call append(0, l:line2)
+		call append(0, l:line1)
+	endif
+endfunction
 
+function! s:insert()
+	call s:hFileInsert();
+
+	let l:line = 11
 	" empty line after header
 	call append(0, "")
 
